@@ -10,24 +10,30 @@ To understand process synchronization using
 5>critical section
 
 
-Introduction
 
-The chief task of an operating system is to manage a set of processes. But in order to use process effectively they must be synchronized, for  the same we will use this method
 
-Implementation
 
-Let us take the scenario that there is a bathroom. The people stand in the queue outside the bathroom and they want to use it one by one in an orderly fashion. There has to be an administrator who can monitor them so they use the bathroom one at a time. In order to do so, the administrator can define his own rules to create the order.
 
-What is Resource?
 
-As the name indicates, resource can be understood as something which can be used. Here in our case, it is the bathroom. Or in other words, it is whatever lies inside the door.
 
-What are thread?
 
-Threads can be understood as a series of instructions. Like in our example, the person waiting in the queue is thread.
 
-Synchronization objects
 
-Let us say there is no administrator who can create rules on how the persons should use the bathroom. Imagine the chaos created by such a scenario. To maintain the order in the system, we need some kind of rule so that the resources (in our case, the bathroom) are used by the threads (in our case Persons) in a systematic and orderly way. To maintain the order, the administrator defines some kind of mechanism (here in our case, it's say key and bulb). The mechanism by which the things can be done in an orderly fashion can be understood as Synchronization Objects.
+
+
+
+
+
+
+
+
+
+
+it will first take the and create a queue for storing  all those specified lenth for process
+
+//for solving the process synchronization problem, i have create a integer variable called semaphore that has two values 0 or 1
+
+//if semaphore values is 1,means shared resource is use by any process then other process will wait untill semaphore value become 0
+//this is only implementation of semaphore rest of implemetaion we will upload soon...
 
 
