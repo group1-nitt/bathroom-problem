@@ -1,0 +1,88 @@
+Critical Section
+
+myCriticalSection.h
+
+
+myCriticalSection()
+{
+
+}
+
+LockCriticalSection()
+{
+//lock resources as someone is using them
+}
+
+UnLockCriticalSection()
+{
+//unlock the resources as thread which was accessing it
+
+}
+CloseCriticalSection()
+{
+//delete administrator exclusively
+}
+
+~myCriticalSection()
+{
+//delete critical section
+}
+
+
+CriticalSectionTest.cpp
+
+We will create the administrator:
+myCriticalSection csBathroom("Bathroom");
+
+
+We will create 4 threads, namely (Ram, Shyam, Raj and Hari) and run them. This signifies that we have created 
+the 4 persons and they all want to go to bathroom
+
+myThread ShyamThread("Shyam", UseBathroomMonitoredByCS, (void*)"Shyam");
+ShyamThread.execute();
+handles[1] =  ShyamThread.getThreadHandle();
+
+UseBathroom()
+{
+x = count;
+x++;
+count = x;
+Sleep(5000);
+
+}
+
+
+Finally, the system waits for all the threads to finish. It symbolizes that all the 
+persons have used the bathroom.
+
+WaitForMultipleObjects(numThreads,handles,TRUE,INFINITE);
+
+At last, we delete the administrator as his job is done
+csBathroom.CloseCriticalSection();
+
+upon running
+
+Initializing the critical section
+Entering the critical section
+Ram is in the bathroom
+Ram is using the bathroom
+Ram will leave the bathroom
+Leaving the critical section Entering the critical section
+
+Shyam is in the bathroom
+Shyam is using the bathroom
+Shyam will leave the bathroom
+Leaving the critical section Entering the critical section
+
+Raj is in the bathroom
+Raj is using the bathroom
+Raj will leave the bathroom
+Leaving the critical section Entering the critical section
+
+Hari is in the bathroom
+Hari is using the bathroom
+Hari will leave the bathroom
+Leaving the critical section
+Deleting the critical section
+The no. of people used the bathroom are:4
+Deleting the critical section
