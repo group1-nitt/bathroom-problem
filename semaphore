@@ -1,0 +1,52 @@
+            SEMAPHORE
+rules
+
+1.He has a key to the bathroom. He gives the key to the person who is standing first in the row. 
+As soon as the person/thread gets the key, he basically owns the semaphore or the key. 
+
+2.The person/thread uses the bathroom/resources and then gives the key back/releases the semaphore to the administrator. 
+
+3.The administrator gives this key again to the first person in the queue. 
+
+4.The Semaphore is smarter than Mutex. He keeps the count of the keys which is with the Semaphore. 
+So when he is having the key, he increases the counter by 1. He has a counter on his table which indicates the count. 
+When he gives the key to the person, he decreases the count by 1. When the counter is showing more than 0, it means 
+the semaphore is up for the grab and the first person in the queue can grab it. 
+
+5.Let us consider a scenario where there are more than 1 bathrooms (let’s say 3) and we have to create the 
+order for the usage of multiple bathrooms. In this scenario, our semaphore administrator 
+can manage it by following its rules: 
+  
+        a. The initial count in the counter will be showing 3.
+        b. He gives one key to the 1st person in the queue and decreases the counter by 1. 
+        So when 3 people are in the bathrooms the counter is 0, hence others have to wait.
+        c. As soon as any person comes out and hands over the key, the counter gets increased 
+        and the first person can take the key and use the bathroom. 
+        
+        
+        
+        mySemaphore
+        {
+        
+        heapalloc()
+        {
+        //allocate memory
+        }
+        
+        heapfree()
+        {
+        //free memory
+        }
+        
+        locksemaphore()
+        {
+        }
+        unloacksemaphore()
+        {
+        }
+        
+        closesemaphore()
+        {
+        }
+        
+        };
